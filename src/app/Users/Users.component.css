@@ -1,0 +1,11 @@
+
+.container:hover img {
+  opacity:0.3;
+}
+.container img:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
+}
+.card .box:hover {
+  transform: translateY(-50px);
+}

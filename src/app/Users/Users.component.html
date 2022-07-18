@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div
+      *ngFor="let user of allUsers.list; let i = index"
+      class="card"
+      style="width: 18rem"
+    >
+      <div class="card-body">
+        <a
+          *ngIf="i + 1 === allUsers.list.length"
+          #theLastList
+          style="color: #000"
+        >
+          <img
+            class="card-img-top"
+            alt="Card image cap"
+            [src]="user.imageUrl"
+          />
+          <span>
+            <h5 class="card-title">{{ user.title }}</h5>
+            <p class="card-text">
+              Name: {{ user.prefix }}{{ user.name }} {{ user.lastName }}
+            </p>
+            <a [routerLink]="['/user/' + user.id]" class="btn btn-dark"
+              >View User: {{ user.id }}</a
+            >
+          </span>
+        </a>
+        <a
+          style="color: #000"
+          [routerLink]="['/user/' + user.id]"
+          *ngIf="i + 1 != allUsers.list.length"
+        >
+          <img
+            class="card-img-top"
+            alt="Card image cap"
+            [src]="user.imageUrl"
+          />
+          <span>
+            <h5 class="card-title">{{ user.title }}</h5>
+            <p class="card-text">
+              Name: {{ user.prefix }}{{ user.name }} {{ user.lastName }}
+            </p>
+            <a [routerLink]="['/user/' + user.id]" class="btn btn-dark"
+              >View User: {{ user.id }}</a
+            >
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
